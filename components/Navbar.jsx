@@ -1,143 +1,106 @@
 "use client";
-
 import Link from "next/link";
-import React, { useState } from "react";
-import { Cake, Home, Info, ShoppingBag, BookOpen, HelpCircle, Phone, Menu, X, Sun, Moon } from "lucide-react";
+import Image from "next/image";
+import { Menu, X } from "lucide-react";
+import { useState, useEffect } from "react";
 
-function Navbar() {
+const navLinks = [
+  { href: "/", label: "Ana səhifə" },
+  { href: "/haqqimizda", label: "Haqqımızda" },
+  { href: "/mehsullar", label: "Məhsullar" },
+  { href: "/blog", label: "Bloq" },
+  { href: "/faq", label: "FAQ" },
+];
+
+export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [dark, setDark] = useState(false);
+
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
 
   return (
-    <nav className={`${dark ? "dark" : ""}`}>
-      <div
-        className="
-          fixed top-0 left-0 w-full z-50
-          backdrop-blur-md
-          bg-white/60 dark:bg-[#1e1c1a]/70
-          shadow-[0_4px_20px_rgba(0,0,0,0.06)]
-          transition-all
-        "
-      >
+    <nav className="fixed top-0 left-0 w-full z-50">
+      <div className="backdrop-blur-xl bg-[#fff5eb]/70 shadow-[0_4px_25px_rgba(0,0,0,0.06)] border-b border-[#f0e4d7] transition-all">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-
-          {/* Logo */}
-          <div className="flex items-center gap-2 text-gray-800 dark:text-[#ffe8c6] text-2xl font-semibold">
-            <Cake size={26} className="text-red-600" />
-            <span className="font-[serif] tracking-wide">Ravira</span>
+          {/* LOGO */}
+          <div className="flex items-center gap-3 cursor-pointer select-none">
+            <div className="relative w-12 h-12 rounded-xl overflow-hidden shadow-sm">
+              <Image src="/logo.jpg" alt="Qalamoo Logo" fill className="object-cover" />
+            </div>
+            <span className="text-2xl font-semibold tracking-wide text-[#5a4636] font-serif">
+              Qalamoo
+            </span>
           </div>
-
-          {/* Desktop menu */}
-          <div className="hidden md:flex items-center gap-8 text-gray-700 dark:text-gray-300 font-medium">
-
-            <Link href="/" className="hover:text-red-600 transition flex items-center gap-1">
-              <Home size={18} /> Ana səhifə
-            </Link>
-
-            <Link href="/haqqimizda" className="hover:text-red-600 transition flex items-center gap-1">
-              <Info size={18} /> Haqqımızda
-            </Link>
-
-            <Link href="/mehsullar" className="hover:text-red-600 transition flex items-center gap-1">
-              <ShoppingBag size={18} /> Məhsullar
-            </Link>
-
-            <Link href="/blog" className="hover:text-red-600 transition flex items-center gap-1">
-              <BookOpen size={18} /> Bloq
-            </Link>
-
-            <Link href="/faq" className="hover:text-red-600 transition flex items-center gap-1">
-              <HelpCircle size={18} /> FAQ
-            </Link>
-
+          {/* DESKTOP MENU */}
+          <div className="hidden md:flex items-center gap-8 text-[17px] font-medium text-[#6d5b4c]">
+            {navLinks.map((link) => (
+              <Link key={link.href} href={link.href} className="hover:text-red-600 transition">
+                {link.label}
+              </Link>
+            ))}
             <Link
-              href="/elaqe"
-              className="
-                px-5 py-2 rounded-full 
-                bg-red-600 text-white shadow-sm 
-                hover:bg-red-700 transition flex items-center gap-2
-              "
+             href="tel:+994502424766"
+  target="_blank"
+  rel="noopener noreferrer"
+              className="ml-4 px-5 py-2 rounded-full bg-red-600 text-white shadow hover:bg-red-700 transition"
             >
-              <Phone size={18} /> Əlaqə
+              Əlaqə
             </Link>
           </div>
-
-          {/* Dark Mode Toggle */}
+          {/* MOBILE MENU BUTTON */}
           <button
-            onClick={() => setDark(!dark)}
-            className="hidden md:flex text-gray-800 dark:text-yellow-400 text-xl"
+            className="md:hidden text-[#6d5b4c] text-3xl"
+            onClick={() => setOpen(true)}
+            aria-label="Menyunu aç"
           >
-            {dark ? <Sun /> : <Moon />}
-          </button>
-
-          {/* Mobile Hamburger */}
-          <button
-            className="md:hidden text-gray-700 dark:text-yellow-400 text-3xl"
-            onClick={() => setOpen(!open)}
-          >
-            {open ? <X /> : <Menu />}
+            <Menu />
           </button>
         </div>
-
-        {/* Mobile Menu */}
-        <div
-          className={`
-            md:hidden overflow-hidden transition-all duration-300 
-            ${open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}
-          `}
-        >
-          <div
-            className="
-              flex flex-col gap-4 
-              bg-white/70 dark:bg-[#26221f]/90 
-              backdrop-blur-md 
-              p-5 rounded-b-2xl
-              text-gray-800 dark:text-gray-200
-            "
+      </div>
+      {/* MOBILE DRAWER MENU */}
+      <div
+        className={`fixed top-0 right-0 h-full w-72 bg-[#f7e7d1] shadow-xl transform transition-transform duration-300 z-[9999] ${
+          open ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="p-6 h-full flex flex-col gap-6 text-[#5a4636] bg-[#f7e7d1] shadow-xl">
+          <button
+            className="self-end text-3xl mb-4 text-[#5a4636]"
+            onClick={() => setOpen(false)}
+            aria-label="Menyunu bağla"
           >
-            <Link href="/" className="flex items-center gap-2 hover:text-red-600">
-              <Home size={18} /> Ana səhifə
-            </Link>
-
-            <Link href="/haqqimizda" className="flex items-center gap-2 hover:text-red-600">
-              <Info size={18} /> Haqqımızda
-            </Link>
-
-            <Link href="/mehsullar" className="flex items-center gap-2 hover:text-red-600">
-              <ShoppingBag size={18} /> Məhsullar
-            </Link>
-
-            <Link href="/blog" className="flex items-center gap-2 hover:text-red-600">
-              <BookOpen size={18} /> Bloq
-            </Link>
-
-            <Link href="/faq" className="flex items-center gap-2 hover:text-red-600">
-              <HelpCircle size={18} /> FAQ
-            </Link>
-
+            <X />
+          </button>
+          {navLinks.map((link) => (
             <Link
-              href="/elaqe"
-              className="
-                px-4 py-2 bg-red-600 text-white rounded-full 
-                flex items-center gap-2 shadow-sm hover:bg-red-700 transition
-              "
+              key={link.href}
+              href={link.href}
+              className="text-lg hover:text-red-600"
+              onClick={() => setOpen(false)}
             >
-              <Phone size={18} /> Əlaqə
+              {link.label}
             </Link>
+          ))}
+         <Link
+  href="tel:+994502424766"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="mt-auto px-4 py-2 bg-red-600 text-white rounded-full text-center hover:bg-red-700 transition"
+  onClick={() => setOpen(false)}
+>
+  Əlaqə
+</Link>
 
-            {/* Mobile Dark Mode Switch */}
-            <button
-              onClick={() => setDark(!dark)}
-              className="mt-2 flex items-center gap-2 text-lg hover:text-red-500 transition"
-            >
-              {dark ? <Sun /> : <Moon />} 
-              {dark ? "Light Mode" : "Dark Mode"}
-            </button>
-          </div>
         </div>
       </div>
     </nav>
   );
 }
-
-export default Navbar;

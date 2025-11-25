@@ -5,6 +5,7 @@ import PopularProducts from "@/components/PopularProducts";
 import Reviews from "@/components/Reviews";
 import FaqSection from "@/components/FaqSection";
 import MapSection from "@/components/MapSection";
+import WhatsAppButton from "@/components/WhatsAppButton";
 export default function Home() {
   return (
     <div>
@@ -15,6 +16,7 @@ export default function Home() {
    <Reviews/>
    <FaqSection/>
    <MapSection/>
+   <WhatsAppButton/>
     </div>
   );
 }

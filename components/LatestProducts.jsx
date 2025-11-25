@@ -9,6 +9,9 @@ export default function LatestProducts() {
     { title: "Şokoladlı paxlava", price: "36.00 ₼", img: "/paxlava-set.jpg" },
     { title: "Sezar Roll", price: "6.00 ₼", img: "/sezar-roll.jpg" },
     { title: "San Sebastyan (klassik)", price: "6.00 ₼", img: "/san-sebastian.jpg" },
+    { title: "Şokoladlı paxlava", price: "36.00 ₼", img: "/paxlava-set.jpg" },
+    { title: "Sezar Roll", price: "6.00 ₼", img: "/sezar-roll.jpg" },
+    { title: "San Sebastyan (klassik)", price: "6.00 ₼", img: "/san-sebastian.jpg" },
   ];
 
   const [index, setIndex] = useState(0);
