@@ -18,9 +18,9 @@ export default function LatestProducts() {
   useEffect(() => {
     const updateVisible = () => {
       const width = window.innerWidth;
-      if (width < 640) setVisibleCount(1);
-      else if (width < 768) setVisibleCount(2);
-      else if (width < 1024) setVisibleCount(3);
+      if (width < 768) setVisibleCount(1); // Mobilde tek məhsul
+      else if (width < 1024) setVisibleCount(2);
+      else if (width < 1280) setVisibleCount(3);
       else setVisibleCount(4);
     };
 
@@ -114,33 +114,34 @@ export default function LatestProducts() {
           {products.map((item, i) => (
             <div 
               key={i} 
-              className="flex-shrink-0 px-2 transition-all duration-300"
+              className="flex-shrink-0 px-3 sm:px-2 transition-all duration-300"
               style={{ width: `${itemWidthPercent}%` }}
             >
               <div
                 className="bg-white border border-gray-200
                            rounded-2xl shadow-sm overflow-hidden
                            hover:shadow-lg hover:scale-[1.02] transition-all duration-300
-                           h-full flex flex-col"
+                           h-full flex flex-col mx-auto"
+                style={{ maxWidth: visibleCount === 1 ? "320px" : "none" }}
               >
                 {/* Image */}
-                <div className="w-full h-48 sm:h-56 md:h-64 lg:h-72 relative flex-shrink-0">
+                <div className="w-full h-64 sm:h-56 md:h-64 lg:h-72 relative flex-shrink-0">
                   <Image
                     src={item.img}
                     alt={item.title}
                     fill
                     className="object-cover"
-                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                     priority={i < 2}
                   />
                 </div>
 
                 {/* Content */}
                 <div className="p-4 sm:p-5 flex-grow flex flex-col">
-                  <h3 className="text-lg font-semibold text-gray-800 line-clamp-2 mb-2">
+                  <h3 className="text-lg font-semibold text-gray-800 text-center sm:text-left line-clamp-2 mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-red-700 font-bold text-lg mt-auto">
+                  <p className="text-red-700 font-bold text-lg text-center sm:text-left mt-auto">
                     {item.price}
                   </p>
                 </div>
@@ -154,12 +155,12 @@ export default function LatestProducts() {
       <div className="max-w-7xl mx-auto">
         {/* Indicators */}
         <div className="flex justify-center gap-2 mt-6 mb-4">
-          {Array.from({ length: maxIndex + 1 }).map((_, i) => (
+          {products.map((_, i) => (
             <button
               key={i}
               onClick={() => setIndex(i)}
-              className={`w-2 h-2 rounded-full transition-all ${
-                i === index ? "bg-red-600 w-6" : "bg-gray-300"
+              className={`w-3 h-3 rounded-full transition-all ${
+                i === index ? "bg-red-600" : "bg-gray-300"
               }`}
               aria-label={`Məhsul ${i + 1}`}
             />
@@ -167,27 +168,27 @@ export default function LatestProducts() {
         </div>
 
         {/* Mobile buttons */}
-        <div className="flex sm:hidden justify-center gap-4 mt-4">
+        <div className="flex sm:hidden justify-center gap-6 mt-4">
           <button
             onClick={prevSlide}
-            className="w-12 h-12 rounded-xl border border-gray-300
+            className="w-14 h-14 rounded-full border border-gray-300
                        bg-white flex items-center justify-center
-                       hover:bg-gray-50 transition text-gray-700 shadow-sm
-                       hover:shadow-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
+                       hover:bg-gray-50 transition text-gray-700 shadow-lg
+                       hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
             aria-label="Əvvəlki məhsul"
           >
-            <ChevronLeft size={24} />
+            <ChevronLeft size={28} />
           </button>
 
           <button
             onClick={nextSlide}
-            className="w-12 h-12 rounded-xl border border-gray-300
+            className="w-14 h-14 rounded-full border border-gray-300
                        bg-white flex items-center justify-center
-                       hover:bg-gray-50 transition text-gray-700 shadow-sm
-                       hover:shadow-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
+                       hover:bg-gray-50 transition text-gray-700 shadow-lg
+                       hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
             aria-label="Növbəti məhsul"
           >
-            <ChevronRight size={24} />
+            <ChevronRight size={28} />
           </button>
         </div>
       </div>
