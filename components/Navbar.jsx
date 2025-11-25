@@ -8,8 +8,7 @@ const navLinks = [
   { href: "/", label: "Ana səhifə" },
   { href: "/haqqimizda", label: "Haqqımızda" },
   { href: "/mehsullar", label: "Məhsullar" },
-  { href: "/blog", label: "Bloq" },
-  { href: "/faq", label: "FAQ" },
+
 ];
 
 export default function Navbar() {
