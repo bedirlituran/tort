@@ -6,15 +6,15 @@ import { Plus } from "lucide-react";
 export default function PopularProducts() {
   const products = [
     {
-      title: "Sezar Roll",
-      desc: "Sezar rollu – lavaş, “Sezar” sousu, aysberq salatı, ...",
-      price: "6.00 ₼",
-      img: "/sezar-roll.jpg",
+      title: "Şokaladli sansebastian",
+      desc: "Cekisi 200 q",
+      price: "5.00 ₼",
+      img: "/sokoladli.jpg",
     },
     {
       title: "Ballı",
       desc: "Ballı tort (Medovik) – təbii bal əsasında hazırlanan ...",
-      price: "25.00 ₼",
+      price: "5.00 ₼",
       img: "/balli.jpg",
     },
     {
@@ -83,7 +83,7 @@ export default function PopularProducts() {
                   className="object-cover"
                 />
 
-                {/* PLUS BUTTON */}
+                {/* PLUS BUTTON
                 <button
                   className="
                     absolute bottom-2 right-2 w-7 h-7 rounded-lg
@@ -93,7 +93,7 @@ export default function PopularProducts() {
                   "
                 >
                   <Plus size={15} className="text-gray-700" />
-                </button>
+                </button> */}
               </div>
             </div>
           ))}

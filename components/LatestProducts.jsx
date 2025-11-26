@@ -10,7 +10,6 @@ export default function LatestProducts() {
     { title: "Profitrol",ceki:'180 qram', price: "3.8 ₼", img: "/profitrol.jpg" },
     { title: "Meyveli ve şokaladli cheesecake",ceki:'200 qram', price: "5 ₼", img: "/meyveli.jpg" },
     { title: "Sansebastian",ceki:'200 qram', price: "5 ₼", img: "/sansebastian.jpg" },
-
     { title: "Balli tort",ceki:'200 qram', price: "5 ₼", img: "/balli.jpg" },
     
   ];
