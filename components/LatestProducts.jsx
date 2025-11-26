@@ -5,13 +5,14 @@ import React, { useEffect, useState, useCallback } from "react";
 
 export default function LatestProducts() {
   const products = [
-    { title: "Qozlu-karamelli", price: "25.00 ₼", img: "/cake-karamel.jpg" },
-    { title: "Şokoladlı paxlava", price: "36.00 ₼", img: "/paxlava-set.jpg" },
-    { title: "Sezar Roll", price: "6.00 ₼", img: "/sezar-roll.jpg" },
-    { title: "San Sebastyan (klassik)", price: "6.00 ₼", img: "/san-sebastian.jpg" },
-    { title: "Şokoladlı paxlava", price: "36.00 ₼", img: "/paxlava-set.jpg" },
-    { title: "Sezar Roll", price: "6.00 ₼", img: "/sezar-roll.jpg" },
-    { title: "San Sebastyan (klassik)", price: "6.00 ₼", img: "/san-sebastian.jpg" },
+    { title: "Teramisu",ceki:'200 qram', price: "4 ₼", img: "/Teramitsu.jpg" },
+    { title: "Trayfl",ceki:'180 qram', price: "3.8 ₼", img: "/tray.jpg" },
+    { title: "Profitrol",ceki:'180 qram', price: "3.8 ₼", img: "/profitrol.jpg" },
+    { title: "Meyveli ve şokaladli cheesecake",ceki:'200 qram', price: "5 ₼", img: "/meyveli.jpg" },
+    { title: "Sansebastian",ceki:'200 qram', price: "5 ₼", img: "/sansebastian.jpg" },
+
+    { title: "Balli tort",ceki:'200 qram', price: "5 ₼", img: "/balli.jpg" },
+    
   ];
 
   const [index, setIndex] = useState(0);
@@ -144,6 +145,9 @@ export default function LatestProducts() {
                   <h3 className="text-lg font-semibold text-gray-800 text-center sm:text-left line-clamp-2 mb-2">
                     {item.title}
                   </h3>
+                   <p className="text-red-700 font-semibold text-lg text-center sm:text-left mt-auto">
+                    {item.ceki}
+                  </p>
                   <p className="text-red-700 font-bold text-lg text-center sm:text-left mt-auto">
                     {item.price}
                   </p>
