@@ -40,7 +40,7 @@ export default function AboutUs() {
 
           <div className="md:w-1/2">
             <Image
-              src="/san-sebastian.jpg"
+              src="/ros.jpg"
               alt="Qalamoo Şirniyyatları"
               width={600}
               height={400}

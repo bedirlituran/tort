@@ -6,6 +6,7 @@ import Reviews from "@/components/Reviews";
 import FaqSection from "@/components/FaqSection";
 import MapSection from "@/components/MapSection";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import GymProteinHero from "@/components/GymProteinHero";
 export default function Home() {
   return (
     <div>
@@ -13,6 +14,7 @@ export default function Home() {
    <LatestProducts/>
    <HeroSection/>
    <PopularProducts/>
+   <GymProteinHero/>
    <Reviews/>
    <FaqSection/>
    <MapSection/>

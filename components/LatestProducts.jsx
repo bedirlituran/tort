@@ -5,7 +5,7 @@ import React, { useEffect, useState, useCallback } from "react";
 
 export default function LatestProducts() {
   const products = [
-    { title: "Teramisu",ceki:'200 qram', price: "4 ₼", img: "/Teramitsu.jpg" },
+    { title: "Teramisu",ceki:'200 qram', price: "4 ₼", img: "/tiramitsu.jpg" },
     { title: "Trayfl",ceki:'180 qram', price: "3.8 ₼", img: "/tray.jpg" },
     { title: "Profitrol",ceki:'180 qram', price: "3.8 ₼", img: "/profitrol.jpg" },
     { title: "Meyveli ve şokaladli cheesecake",ceki:'200 qram', price: "5 ₼", img: "/meyveli.jpg" },

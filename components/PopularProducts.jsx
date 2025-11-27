@@ -7,7 +7,7 @@ export default function PopularProducts() {
   const products = [
     {
       title: "Şokaladli sansebastian",
-      desc: "Cekisi 200 q",
+      desc: "200 qr",
       price: "5.00 ₼",
       img: "/sokoladli.jpg",
     },
@@ -18,28 +18,28 @@ export default function PopularProducts() {
       img: "/balli.jpg",
     },
     {
-      title: "Şokoladlı paxlava",
-      desc: "25 ədəd / 0.9 kq...",
-      price: "36.00 ₼",
-      img: "/sokoladli-paxlava.jpg",
+      title: "Eskimo",
+      desc: "200 qr",
+      price: "5.00 ₼",
+      img: "/eski.jpg",
     },
     {
-      title: "Şokoladlı paxlava",
-      desc: "16 ədəd / 0.6 kq...",
-      price: "25.00 ₼",
-      img: "/sokoladli-paxlava.jpg",
+      title: "Roşen tortu",
+      desc: " 200 qr",
+      price: "5.00 ₼",
+      img: "/ros.jpg",
     },
     {
-      title: "Şokoladlı paxlava",
-      desc: "8 ədəd / 0.3 kq...",
-      price: "13.00 ₼",
-      img: "/sokoladli-paxlava.jpg",
+      title: "Trufell tortu",
+      desc: "200 qr",
+      price: "5.00 ₼",
+      img: "/truf.jpg",
     },
     {
-      title: "Assorti paxlava (qoz və badam)",
-      desc: "25 ədəd / 0.9 kq...",
-      price: "36.00 ₼",
-      img: "/assorti-paxlava.jpg",
+      title: "Üç şokalad tortu",
+      desc: "200 qr",
+      price: "5.00 ₼",
+      img: "/uc.jpg",
     },
   ];
 
@@ -62,7 +62,7 @@ export default function PopularProducts() {
               className="
                 bg-[#fffdfa]
                 border border-[#e8e3d7]
-                p-5 rounded-2xl shadow-sm
+                p-4 rounded-2xl shadow-sm
                 hover:shadow-md hover:bg-[#fdf7f0]
                 transition flex items-center justify-between gap-4
               "

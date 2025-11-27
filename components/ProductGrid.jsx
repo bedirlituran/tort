@@ -3,98 +3,88 @@
 import React from "react";
 
 export default function ProductGrid() {
- const products = [
-  {
-    title: "Tiramisu",
-    price: "35.00 ₼",
-    category: "Tortlar",
-    img: "/tiramitsu.jpg",
-  },
-  {
-    title: "Kəsmikli-moruqlu",
-    price: "29.00 ₼",
-    category: "Tortlar",
-    img: "https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    title: "Spartak",
-    price: "25.00 ₼",
-    category: "Tortlar",
-    img: "/spartak.jpg",
-  },
-];
-
+  const products = [
+    { title: "Teramisu", price: "5.00 ₼", category: "200 qram", img: "/tiramitsu.jpg" },
+    { title: "Trayfl", price: "3.8 ₼", category: "180 qram", img: "/tray.jpg" },
+    { title: "Profitrol", price: "3.8 ₼", category: "180 qram", img: "/profitrol.jpg" },
+    { title: "Meyveli və şokaladlı cheesecake", price: "5.00 ₼", category: "200 qram", img: "/meyveli.jpg" },
+    { title: "Sansebastian", price: "5.00 ₼", category: "200 qram", img: "/sansebastian.jpg" },
+    { title: "Ballı tort", price: "5.00 ₼", category: "200 qram", img: "/balli.jpg" },
+    { title: "Üç şokalad tortu", price: "5.00 ₼", category: "200 qram", img: "/uc.jpg" },
+    { title: "Trufell tortu", price: "5.00 ₼", category: "200 qram", img: "/truf.jpg" },
+    { title: "Roşen tortu", price: "5.00 ₼", category: "200 qram", img: "/ros.jpg" },
+    { title: "Eskimo", price: "5.00 ₼", category: "200 qram", img: "/eski.jpg" },
+    { title: "Şokoladlı sansebastian", price: "5.00 ₼", category: "200 qram", img: "/sokoladli.jpg" },
+    { title: "Redvelvet", price: "4.00 ₼", category: "200 qram", img: "/red.jpg" }
+  ];
 
   return (
     <div className="flex-1">
 
       {/* Header */}
       <div className="flex justify-between mb-8">
-        <p className="text-gray-600 text-sm tracking-wide">
-          20 nəticədən 1–12
-        </p>
-
-        <select
-          className="
-            px-3 py-2 text-sm rounded-xl
-            bg-[#fffdfa] border border-[#e8e3d7]
-            shadow-sm outline-none
-            focus:border-red-500 transition
-          "
-        >
-          <option>Default Sıralama</option>
-          <option>Ucuzdan bahaya</option>
-          <option>Bahadan ucuza</option>
-        </select>
+        <p className="text-gray-600 text-sm tracking-wide">20 nəticədən 1–12</p>
       </div>
 
       {/* Product Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {products.map((p, i) => (
           <div
             key={i}
             className="
               bg-[#fffdfa]
               border border-[#e8e3d7]
-              rounded-2xl shadow-sm
-              overflow-hidden hover:shadow-md
-              transition
+              rounded-3xl 
+              shadow-sm hover:shadow-xl
+              transition-all duration-300
+              overflow-hidden
+              hover:-translate-y-1
             "
           >
-            <img
-              src={p.img}
-              alt={p.title}
-              className="w-full h-64 object-cover rounded-b-none"
-            />
+            {/* Image */}
+            <div className="overflow-hidden">
+              <img
+                src={p.img}
+                alt={p.title}
+                className="
+                  w-full h-100s object-cover
+                  transition-all duration-300
+                  hover:scale-105
+                "
+              />
+            </div>
 
+            {/* Content */}
             <div className="p-6">
-              <h3 className="text-lg font-semibold text-gray-800">
+              <h3 className="text-xl font-semibold text-gray-900 leading-snug">
                 {p.title}
               </h3>
 
-              <p className="text-red-700 text-sm mt-1">{p.category}</p>
-
-              <p className="text-gray-600 text-sm mt-3 line-clamp-2">
-                Şəkildəki yazılar bura əlavə edilir…
+              <p className="text-red-700 text-sm font-medium mt-1">
+                {p.category}
               </p>
 
+              {/* Price + Button */}
               <div className="mt-6 flex justify-between items-center">
-                <span className="text-red-700 font-semibold text-xl">
+                <span className="text-red-700 font-bold text-2xl">
                   {p.price}
                 </span>
 
                 <button
                   className="
-                    px-4 py-2 rounded-full
+                    px-5 py-2.5 rounded-full
                     border border-red-600 text-red-600
-                    bg-white hover:bg-red-50
-                    transition shadow-sm
+                    bg-white hover:bg-red-600 hover:text-white
+                    transition-all duration-300
+                    shadow-sm hover:shadow-md
+                    text-sm font-medium
                   "
                 >
                   Səbətə Əlavə Et
                 </button>
               </div>
             </div>
+
           </div>
         ))}
       </div>
