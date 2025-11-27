@@ -31,12 +31,12 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
           {/* LOGO */}
           <div className="flex items-center gap-3 cursor-pointer select-none">
-            <div className="relative w-12 h-12 rounded-xl overflow-hidden shadow-sm">
-              <Image src="/logo.jpg" alt="Qalamoo Logo" fill className="object-cover" />
+            <div className="relative w-24 h-16">
+              <img src='/logo.jpg' alt="Qalamoo" className="object-cover w-full h-full"/>
             </div>
-            <span className="text-2xl font-semibold tracking-wide text-[#5a4636] font-serif">
+            {/* <span className="text-2xl font-semibold tracking-wide text-[#5a4636] font-serif">
               Qalamoo
-            </span>
+            </span> */}
           </div>
           {/* DESKTOP MENU */}
           <div className="hidden md:flex items-center gap-8 text-[17px] font-medium text-[#6d5b4c]">

@@ -102,7 +102,7 @@ export default function PopularProducts() {
         {/* RIGHT LARGE IMAGE */}
         <div className="flex justify-center">
           <Image
-            src="/des.png"
+            src="/des2.png"
             alt="Popular Banner"
             width={450}
             height={600}
