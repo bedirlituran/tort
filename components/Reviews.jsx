@@ -6,7 +6,7 @@ export default function Reviews() {
     {
       name: "Aysel Quliyeva",
       role: "Müştəri",
-      text: "Ravira-nın hazırladığı şirniyyatlar sadəcə dadlı yox, həm də çox zövqlüdür. Xüsusilə paxlavaları mükəmməldir! Hər sifarişdə eyni keyfiyyət!",
+      text: "Qalamoo-nun hazırladığı şirniyyatlar sadəcə dadlı yox, həm də çox zövqlüdür. Xüsusilə paxlavaları mükəmməldir! Hər sifarişdə eyni keyfiyyət!",
       avatar:
         "https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=400&q=80",
     },
