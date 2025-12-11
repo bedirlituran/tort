@@ -27,7 +27,7 @@ export default function Footer() {
       <div className="relative flex justify-center mb-16 z-10">
         <div className="relative">
           <img
-            src="/logo.jpg"
+            src="/logo.png"
             alt="Qalamoo Logo"
             className="w-44 opacity-[0.97] drop-shadow-[0_0_25px_rgba(255,200,150,0.3)] rounded-full"
           />

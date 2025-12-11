@@ -13,7 +13,7 @@ export const metadata = {
   title: "Qalamoo Şirniyyat Evi",
   description: "Qalamoo Şirniyyat Evi – Təzə və dadlı şirniyyatlar",
   icons: {
-    icon: "/logo.jpg", // public/favicon.ico
+    icon: "/logo.png", // public/favicon.ico
   },
 };
 
