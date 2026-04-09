@@ -3,19 +3,45 @@
 import React from "react";
 
 export default function ProductGrid() {
+  const handleWhatsAppOrder = (product) => {
+    const message = `🛍️ *Sifariş:* ${product.title}\n💰 *Qiymət:* ${product.price}\n📏 *Ölçü:* ${product.category}\n\n🖼️ [Şəkil]`;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/994502424766?text=${encodedMessage}`;
+    window.open(whatsappUrl, "_blank");
+  };
+
   const products = [
-    { title: "Teramisu", price: "5.00 ₼", category: "200 qram", img: "/tiramitsu.jpg" },
+    { title: "Teramisu", price: "3.80 ₼", category: "200 qram", img: "/tiramitsu.jpg" },
     { title: "Trayfl", price: "3.8 ₼", category: "180 qram", img: "/tray.jpg" },
     { title: "Profitrol", price: "3.8 ₼", category: "180 qram", img: "/profitrol.jpg" },
-    { title: "Meyveli və şokaladlı cheesecake", price: "5.00 ₼", category: "200 qram", img: "/meyveli.jpg" },
-    { title: "Sansebastian", price: "5.00 ₼", category: "200 qram", img: "/sansebastian.jpg" },
-    { title: "Ballı tort", price: "5.00 ₼", category: "200 qram", img: "/balli.jpg" },
-    { title: "Üç şokalad tortu", price: "5.00 ₼", category: "200 qram", img: "/uc.jpg" },
-    { title: "Trufell tortu", price: "5.00 ₼", category: "200 qram", img: "/truf.jpg" },
-    { title: "Roşen tortu", price: "5.00 ₼", category: "200 qram", img: "/ros.jpg" },
-    { title: "Eskimo", price: "5.00 ₼", category: "200 qram", img: "/eski.jpg" },
-    { title: "Şokoladlı sansebastian", price: "5.00 ₼", category: "200 qram", img: "/sokoladli.jpg" },
-    { title: "Redvelvet", price: "4.00 ₼", category: "200 qram", img: "/red.jpg" }
+    { title: "Meyveli və şokaladlı cheesecake", price: "3.80 ₼", category: "200 qram", img: "/meyveli.jpg" },
+    { title: "Sansebastian", price: "3.80 ₼", category: "200 qram", img: "/sansebastian.jpg" },
+    { title: "Ballı tort", price: "3.80 ₼", category: "200 qram", img: "/balli.jpg" },
+    { title: "Üç şokalad tortu", price: "3.80 ₼", category: "200 qram", img: "/uc.jpg" },
+    { title: "Trufell tortu", price: "3.80 ₼", category: "200 qram", img: "/truf.jpg" },
+    { title: "Roşen tortu", price: "3.80 ₼", category: "200 qram", img: "/ros.jpg" },
+    { title: "Eskimo", price: "3.80 ₼", category: "200 qram", img: "/eski.jpg" },
+    { title: "Şokoladlı sansebastian", price: "3.80 ₼", category: "200 qram", img: "/sokoladli.jpg" },
+    { title: "Redvelvet", price: "4.00 ₼", category: "200 qram", img: "/red.jpg" },
+
+    { title: "Quş sudu tortu", price: "4.00 ₼", category: "200 qram", img: "/Quş.jpg" },
+    { title: "Balli tort deserti", price: "3.50 ₼", category: "200 qram", img: "/ballitort.jpg" },
+    { title: "Zümrüd deserti", price: "3.80 ₼", category: "200 qram", img: "/zumrud.jpg" },
+    { title: "Trufel deserti", price: "3.80 ₼", category: "200 qram", img: "/trufeldesert.jpg" },
+    { title: "Redvilved", price: "3.80 ₼", category: "200 qram", img: "/redvil.jpg" },
+    { title: "Krep kivi", price: "3.80 ₼", category: "200 qram", img: "/krepkivi.jpg" },
+    { title: "Krep çiyələkli", price: "3.80 ₼", category: "200 qram", img: "/krepciy.jpg" },
+    { title: "Krep oreyali şokaladli", price: "4.00 ₼", category: "200 qram", img: "/krepo.jpg" },
+    { title: "Krep apilsinli", price: "3.80 ₼", category: "200 qram", img: "/krepa.jpg" },
+    { title: "Koki peceniyasi", price: "2.50 ₼", category: "200 qram", img: "/koki.jpg" },
+    { title: "Teramisu", price: "4.00 ₼", category: "200 qram", img: "/ter.jpg" },
+    { title: "Qaymaqlı sütlac", price: "3.00 ₼", category: "200 qram", img: "/qay.jpg" },
+
+    { title: "Ekler", price: "2.00 ₼", category: "200 qram", img: "/ek.jpg" },
+    
+
+
+
   ];
 
   return (
@@ -71,16 +97,18 @@ export default function ProductGrid() {
                 </span>
 
                 <button
+                  onClick={() => handleWhatsAppOrder(p)}
                   className="
                     px-5 py-2.5 rounded-full
-                    border border-red-600 text-red-600
-                    bg-white hover:bg-red-600 hover:text-white
+                    border border-green-600 text-green-600
+                    bg-white hover:bg-green-600 hover:text-white
                     transition-all duration-300
                     shadow-sm hover:shadow-md
                     text-sm font-medium
+                    flex items-center gap-2
                   "
                 >
-                  Səbətə Əlavə Et
+                  💬 WhatsApp
                 </button>
               </div>
             </div>

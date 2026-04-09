@@ -8,37 +8,37 @@ export default function PopularProducts() {
     {
       title: "Şokaladli sansebastian",
       desc: "200 qr",
-      price: "5.00 ₼",
+      price: "3.80 ₼",
       img: "/sokoladli.jpg",
     },
     {
       title: "Ballı",
       desc: "Ballı tort (Medovik) – təbii bal əsasında hazırlanan ...",
-      price: "5.00 ₼",
+      price: "3.80 ₼",
       img: "/balli.jpg",
     },
     {
       title: "Eskimo",
       desc: "200 qr",
-      price: "5.00 ₼",
+      price: "3.80 ₼",
       img: "/eski.jpg",
     },
     {
       title: "Roşen tortu",
       desc: " 200 qr",
-      price: "5.00 ₼",
+      price: "3.80 ₼",
       img: "/ros.jpg",
     },
     {
       title: "Trufell tortu",
       desc: "200 qr",
-      price: "5.00 ₼",
+      price: "3.80 ₼",
       img: "/truf.jpg",
     },
     {
       title: "Üç şokalad tortu",
       desc: "200 qr",
-      price: "5.00 ₼",
+      price: "3.80 ₼",
       img: "/uc.jpg",
     },
   ];
